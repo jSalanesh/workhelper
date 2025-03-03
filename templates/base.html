@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+          
+            <div id="vaNavbar" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                  AAMCO Script
+                </a>
+          
+                <a class="navbar-item" href="/dailytask">
+                  Daily Tasks
+                </a>
+  
+                <a class="navbar-item" href="/roreview">
+                  Repair Order Review
+                </a>
+                
+              </div>
+          
+            </div>
+          </nav>
+        </div>
+      </section>
+    {%block content%}
+    {%endblock%}
+</body>
+</html>
