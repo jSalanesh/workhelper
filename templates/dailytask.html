@@ -2,5 +2,49 @@
 {%block title%}VA Daily Task{%endblock%}
 
 {%block content%} 
-<h1>VA DAILY TASK</h1>
+<section class="Header mb-6">
+    <div class="container">
+        <div class="columns is-centered">
+            <h1 class="is-size-2">VA DAILY TASK</h1>
+        </div>  
+    </div>
+</section>
+<section class="Meat">
+    <div class="container">
+        <form action="#" method="post">
+            <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Add a task">
+                </div>
+                <div class="control">
+                  <button class="button is-info">
+                    Add
+                  </button>
+                </div>
+              </div>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Task</th>
+                    <th>Done?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Make sure that the Schedule tab on AMS has jobs on the correct date.</td>
+                    <td>
+                        <div class="buttons">
+                        <button class="button is-primary">Done</button>
+                        <button class="button is-info">Edit</button>
+                        <button class="button is-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 {%endblock%}

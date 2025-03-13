@@ -1,7 +1,14 @@
 {%extends "base.html"%}
-{%block title%}VA Helper Script{%endblock%}
+{%block title%}VA Call helper{%endblock%}
 
 {%block content%}
+<section class="Header mb-6">
+  <div class="container">
+      <div class="columns is-centered">
+          <h1 class="is-size-2">CALL HELPER</h1>
+      </div>  
+  </div>
+</section>
 <section class="aamco-script">
     <div class="container">
       <div class="fixed-grid">
@@ -86,6 +93,30 @@
             <div class="block">
               <label class="label">If the customer denies after mentioning the VCC or just really wants an estimate/quote:</label>
               <p>My manager is still on the line with another customer. Can we give you a call back in 30 minutes? Is this a good number for you?</p>
+            </div>
+            <div class="block">
+              <label class="label">Phoenetic Generator</label>
+              <form action="#" method="post">
+                <div class="field has-addons">
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Pase a number with letters" name="baseNum">
+                  </div>
+                  <div class="control">
+                    <button type="submit" value="submit" class="button is-info">
+                      Generate Phoenetics
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="block">
+              {% with messages=get_flashed_messages() %}
+                {% if messages %}
+                  {%for msg in messages%}
+                    <p>{{msg}}</p>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
             </div>
           </div>
         </div>
