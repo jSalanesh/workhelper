@@ -1,0 +1,83 @@
+{%extends "base.html"%}
+{%block title%}VA Call helper{%endblock%}
+
+{%block content%}
+<section class="Header mb-6">
+    <div class="container">
+        <div class="columns is-centered">
+            <h1 class="is-size-2">PART ORDERING SCRIPT</h1>
+        </div>  
+    </div>
+  </section>
+  <section class="aamco-script">
+      <div class="container">
+        <div class="fixed-grid">
+          <div class="grid">
+            <div class="cell">
+            
+              <div class="field">
+                <label class="label">Hello, this is Joseph from AAMCO Transmissions. I'm looking for a part for a (YMM of vehicle). I can also give you a vin.</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="the stuff the vendor says"></textarea>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">How much for the part? </label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Notes">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Does this have a warranty?</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Vehicle Details">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Does this have a core charge if so then how much?(Only when buying transmissions)</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Vehicle Details">
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Cancel</button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="cell">
+              <div class="block">
+                <label class="label">Phoenetic Generator</label>
+                <form action="#" method="post">
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Pase a number with letters" name="baseNum">
+                    </div>
+                    <div class="control">
+                      <button type="submit" value="submit" class="button is-info">
+                        Generate Phoenetics
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="block">
+                {% with messages=get_flashed_messages() %}
+                  {% if messages %}
+                    {%for msg in messages%}
+                      <p>{{msg}}</p>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+{%endblock%}
