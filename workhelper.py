@@ -31,8 +31,17 @@ def customerScript():
 @app.route("/partscript",methods=["POST","GET"])
 def partScript():
     if request.method == "POST":
-        phoenetics = phoeneticGenerator(request.form["baseNum"])
-        flash(phoenetics,"info")
+        if 'phoneticGenButton' in request.form:
+            phoenetics = phoeneticGenerator(request.form["baseNum"])
+            flash(phoenetics,"info")
+        elif 'partsInfoButton' in request.form:
+            parts_info = []
+            parts_info.append(request.form["partNotes"])
+            parts_info.append(request.form["warranty"])
+            parts_info.append(request.form["partDetails"])
+            parts_info_str = ", ".join(parts_info)
+            flash(parts_info_str,"info")
+
         return redirect(url_for("partScript"))
     else:
         return render_template("partscript.html")
@@ -40,8 +49,17 @@ def partScript():
 @app.route("/warrantyscript",methods=["POST","GET"])
 def warrantyScript():
     if request.method == "POST":
-        phoenetics = phoeneticGenerator(request.form["baseNum"])
-        flash(phoenetics,"info")
+        if 'phoneticGenButton' in request.form:
+            phoenetics = phoeneticGenerator(request.form["baseNum"])
+            flash(phoenetics,"info")
+        elif 'warrantyInfoButton' in request.form:
+            warranty_info = []
+            warranty_info.append(request.form["warrantyNotes"])
+            warranty_info.append(request.form["progressNotes"])
+            warranty_info.append(request.form["authorizationNum"])
+            warranty_info_str = ", ".join(warranty_info)
+            flash(warranty_info_str,"info")
+            
         return redirect(url_for("warrantyScript"))
     else:
         return render_template("warrantyscript.html")

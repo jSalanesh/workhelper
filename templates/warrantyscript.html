@@ -14,34 +14,36 @@
         <div class="fixed-grid">
           <div class="grid">
             <div class="cell">
-            
+            <form action="#" method="post">
               <div class="field">
                 <label class="label">Hello, this is Joseph from AAMCO Transmissions. I would like to follow up on a claim that one of our customers has.</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="the stuff the adjuster says"></textarea>
+                  <textarea name="warrantyNotes" class="textarea" placeholder="the stuff the adjuster says"></textarea>
                 </div>
               </div>
               <div class="field">
                 <label class="label">What can we do to move forward with the claim? </label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Notes">
+                  <input name="progressNotes" class="input" type="text" placeholder="Notes">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Can I have an authorization number?</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Vehicle Details">
+                  <input name="authorizationNum" class="input" type="text" placeholder="Vehicle Details">
                 </div>
               </div>
               
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-link">Submit</button>
+                  <button type="submit" value="submit" name="warrantyInfoButton" class="button is-link">Submit</button>
                 </div>
                 <div class="control">
                   <button class="button is-link is-light">Cancel</button>
                 </div>
               </div>
+            </form>
+              
             </div>
   
             <div class="cell">
@@ -53,7 +55,7 @@
                       <input class="input" type="text" placeholder="Pase a number with letters" name="baseNum">
                     </div>
                     <div class="control">
-                      <button type="submit" value="submit" class="button is-info">
+                      <button name="phoneticGenButton" type="submit" value="submit" class="button is-info">
                         Generate Phoenetics
                       </button>
                     </div>

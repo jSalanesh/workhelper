@@ -14,7 +14,7 @@
         <div class="fixed-grid">
           <div class="grid">
             <div class="cell">
-            
+            <form action="#" method="post">
               <div class="field">
                 <label class="label">Hello, this is Joseph from AAMCO Transmissions. I'm looking for a part for a (YMM of vehicle). I can also give you a vin.</label>
                 <div class="control">
@@ -22,30 +22,31 @@
                 </div>
               </div>
               <div class="field">
-                <label class="label">How much for the part? </label>
+                <label class="label">How much for the part?, What is the part number?, Do you guys deliver?</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Notes">
+                  <input name="partNotes" class="input" type="text" placeholder="Notes">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Does this have a warranty?</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Vehicle Details">
+                  <input name="warranty" class="input" type="text" placeholder="Warranty information">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Does this have a core charge if so then how much?(Only when buying transmissions)</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Vehicle Details">
+                  <input name="partDetails"class="input" type="text" placeholder="Part Details">
                 </div>
               </div>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-link">Submit</button>
+                  <button class="button is-link" name="partsInfoButton" type="submit" value="submit">Submit</button>
                 </div>
                 <div class="control">
                   <button class="button is-link is-light">Cancel</button>
                 </div>
+            </form>
               </div>
             </div>
   
@@ -58,7 +59,7 @@
                       <input class="input" type="text" placeholder="Pase a number with letters" name="baseNum">
                     </div>
                     <div class="control">
-                      <button type="submit" value="submit" class="button is-info">
+                      <button type="submit" value="submit" name="phoneticGenButton" class="button is-info">
                         Generate Phoenetics
                       </button>
                     </div>
