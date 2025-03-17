@@ -1,4 +1,5 @@
 from flask import Flask, url_for, render_template, request, redirect,flash,session
+from stuff import phoeneticGenerator
 
 app = Flask(__name__)
 app.secret_key = "Wakatabotobilat251"
@@ -10,13 +11,28 @@ def home():
 
 @app.route("/customerscript",methods=["POST","GET"])
 def customerScript():
-    return render_template("customerscript.html")
+    if request.method == "POST":
+       customer_info = []
+       customer_info.append(request.form["generalNotes"])
+       customer_info.append(request.form["fullName"])
+       customer_info.append(request.form["yearMakeModel"])
+       customer_info.append(request.form["issueDuration"])
+       customer_info.append(request.form["anyWorkDone"])
+       customer_info.append(request.form["appointment"])
+       customer_info.append(request.form["customerNumber"])
+
+       customer_info_str = ", ".join(customer_info)
+       flash(customer_info_str,"info")
+       return redirect(url_for("customerScript"))
+    else:
+        return render_template("customerscript.html")
+            
 
 @app.route("/partscript",methods=["POST","GET"])
 def partScript():
     if request.method == "POST":
-        base_num = request.form["baseNum"]
-        flash(base_num,"info")
+        phoenetics = phoeneticGenerator(request.form["baseNum"])
+        flash(phoenetics,"info")
         return redirect(url_for("partScript"))
     else:
         return render_template("partscript.html")
@@ -24,8 +40,8 @@ def partScript():
 @app.route("/warrantyscript",methods=["POST","GET"])
 def warrantyScript():
     if request.method == "POST":
-        base_num = request.form["baseNum"]
-        flash(base_num,"info")
+        phoenetics = phoeneticGenerator(request.form["baseNum"])
+        flash(phoenetics,"info")
         return redirect(url_for("warrantyScript"))
     else:
         return render_template("warrantyscript.html")
