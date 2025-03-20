@@ -16,15 +16,27 @@
             <div class="cell">
             <form action="#" method="post">
               <div class="field">
+                <label class="label">Shop Name</label>
+                <div class="control">
+                  <input  name="shopName" class="input" type="text" placeholder="Name of Shop">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Shop Number</label>
+                <div class="control">
+                  <input name="shopNumber" class="input" type="text" placeholder="Phone number of shop">
+                </div>
+              </div>
+              <div class="field">
                 <label class="label">Hello, this is Joseph from AAMCO Transmissions. I'm looking for a part for a (YMM of vehicle). I can also give you a vin.</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="the stuff the vendor says"></textarea>
+                  <textarea name="partNotes" class="textarea" placeholder="the stuff the vendor says"></textarea>
                 </div>
               </div>
               <div class="field">
                 <label class="label">How much for the part?, What is the part number?, Do you guys deliver?</label>
                 <div class="control">
-                  <input name="partNotes" class="input" type="text" placeholder="Notes">
+                  <input  name="partPrice" class="input" type="text" placeholder="Price of Part">
                 </div>
               </div>
               <div class="field">
@@ -37,6 +49,12 @@
                 <label class="label">Does this have a core charge if so then how much?(Only when buying transmissions)</label>
                 <div class="control">
                   <input name="partDetails"class="input" type="text" placeholder="Part Details">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Can I have a quote number?</label>
+                <div class="control">
+                  <input  name="quoteNumber" class="input" type="text" placeholder="Notes">
                 </div>
               </div>
               <div class="field is-grouped">

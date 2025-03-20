@@ -36,9 +36,13 @@ def partScript():
             flash(phoenetics,"info")
         elif 'partsInfoButton' in request.form:
             parts_info = []
+            parts_info.append(request.form["shopName"])
+            parts_info.append(request.form["shopNumber"])
             parts_info.append(request.form["partNotes"])
+            parts_info.append(request.form["partPrice"])
             parts_info.append(request.form["warranty"])
             parts_info.append(request.form["partDetails"])
+            parts_info.append(request.form["quoteNumber"])
             parts_info_str = ", ".join(parts_info)
             flash(parts_info_str,"info")
 
